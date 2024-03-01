@@ -1,0 +1,60 @@
+//  roomType roomName roomKey isTransportRoom roomDescription
+room - MainEntrance The gateway to nightmares, flickering lights unveil remnants of forgotten events, setting the chilling tone for Strand Campus.
+room - EerieLaboratories Dimly lit, filled with unsettling experiments, the Eerie Laboratories foreshadow the twisted nightmares within Strand Campus.
+room - ShadowyHall  It's a corridor steeped in the history of the campus, hinting at the arcane secrets awaiting within Kenny's sanctum. Dont push your luck, you wont know how he reacts...
+room - InformaticsChamber Within reach of the Main Entrance, the Informatics Chamber holds echoes of forgotten data, serving as a portal to spectral secrets.
+room - HauntedBathroom Chilling space with dripping faucets, creaking pipes, and mysterious laughter.
+room - ExamHall  As players traverse through it, they will uncover the path leading to the final exam room, where all secrets of Strand Campus are poised to be revealed in a chilling climax.
+room - EngineeringWorkshop Half-finished projects and abandoned tools create an otherworldly landscape, and ghostly blueprints seem to float in the air, capturing the dreams of the past.
+room - TerrifyingAuditorium The terrifying auditorium creates a haunting atmosphere where unsettling echoes fill the space, as if a performance that never occurred still lingers in the air.
+room - GhostlyCafeteria The Ghostly Cafeteria, now deserted and frozen in time, bears witness to abandoned trays and spectral cutlery, with flickering lights casting eerie shadows.
+room - PhantomLounge In the Phantom Lounge, ethereal music plays from a long-forgotten jukebox, and ghostly figures sway to the rhythm, trapped in a moment that defies the passage of time.
+room - KennysOffice true 
+room lock ExamRoom key Finally, you made it.
+room - ForgottenObservatory Cobwebs cling to antique telescopes, and celestial charts with faded constellations adorn the walls. The air is thick with the whispers of cosmic secrets.
+
+//    storeRoom itemType itemName itemWeight canBeGrabbed weaponAttackStat itemDescription 
+addIn EerieLaboratories weapon knife 2 true 5 A cold, serrated blade with a malevolent glint, its surface adorned with cryptic engravings that seem to whisper tales of past atrocities.
+addIn EngineeringWorkshop weapon bat 3 true 8 A weathered baseball bat, its wood stained with the echoes of countless struggles, as if the spirits of its wielders linger.
+addIn ShadowyHall weapon machete 4 true 10 A rusted machete, its curved edge glistening with a sickly sheen, a silent testament to the horrors it has unleashed upon unsuspecting victims.
+addIn InformaticsChamber weapon flamethrower 8 true 15 A wicked contraption oozing with a volatile menace, spewing forth ethereal flames that dance in unnatural patterns.
+addIn HauntedBathroom weapon pipe 6 true 12 A corroded pipe, heavy, its surface etched with the scars of countless confrontations.
+addIn ExamHall - piano false
+addIn TerrifyingAuditorium - statue false
+addIn EerieLaboratories - table false
+addIn ShadowyHall - trophy false
+addIn ShadowyHall - painting false
+addIn PhantomLounge - sofa false
+addIn GhostlyCafeteria - fridge false
+addIn ForgottenObservatory weapon lightsaber 14 true 18 The lightsaber sets a chilling realization: a Jedi was once here, their spectral weapon now a testament to the nightmare that claimed them.
+addIn MainEntrance - invitation 1 true A sealed envelope with an ornate insignia. Inside, an invitation to an enigmatic gathering at Strand Campus is discovered, signed by the player's alter ego. 
+addIn EngineeringWorkshop - letter 1 true A torn page from a diary. The entry speaks of a forgotten ritual conducted by the player, seeking power beyond comprehension. 
+addIn TerrifyingAuditorium - photo 1 true A dusty photo of the player interacting with ominous figures—Jason Voorhees, Freddy Krueger, and the Joker. 
+addIn ForgottenObservatory - watch 1 true An antique pocket watch with an intricate design.When examined, the watch transports the player into frightening memories.
+addIn InformaticsChamber - pen 1 true A stylish pen with a dark aura. When used, the pen automatically writes cryptic messages detailing the player's descent into forbidden practices. 
+addIn GhostlyCafeteria - cognac 1 true A small, ornate bottle filled with a shimmering liquid. When consumed, the elixir unveils the moment that led to the pact with the malevolent characters. 
+addIn HauntedBathroom - journal 1 true A hidden journal, exposing the player's dual identity and the betrayal of allies. It narrates the summoning of iconic villains.
+
+// currentRoom direction Exit direction Exit direction Exit
+exitsOf MainEntrance north ExamHall east EngineeringWorkshop west EerieLaboratories
+exitsOf EerieLaboratories north InformaticsChamber east MainEntrance west ShadowyHall
+exitsOf ShadowyHall east EerieLaboratories west KennysOffice
+exitsOf InformaticsChamber south EerieLaboratories west HauntedBathroom
+exitsOf HauntedBathroom east InformaticsChamber
+exitsOf ExamHall north ExamRoom south MainEntrance
+exitsOf EngineeringWorkshop north TerrifyingAuditorium west MainEntrance
+exitsOf TerrifyingAuditorium north PhantomLounge south EngineeringWorkshop west GhostlyCafeteria
+exitsOf GhostlyCafeteria east TerrifyingAuditorium
+exitsOf PhantomLounge north ForgottenObservatory south TerrifyingAuditorium
+exitsOf ForgottenObservatory south PhantomLounge
+
+// charType charName charSpawnRoom isAggro moves attackLevel charStory(charDescription basically)
+character monster FreddyKrueger HauntedBathroom true true 8 As Freddy Krueger fades, the dream realm recoils in defeat. You emerge victorious, the haunting echoes of his razor-sharp claws scraping against the walls fading into the void. 
+character monster JasonVorhees ForgottenObservatory true true 10 The relentless force of Jason Voorhees finally crumbles before your resilience. The menacing presence that haunted Crystal Lake and now Strand Campus is extinguished. 
+character monster Joker GhostlyCafeteria true true 12 In the aftermath of chaos, the Joker's maniacal laughter is silenced. The echoes of his madness dissipate, leaving behind a chilling stillness. 
+character - LaurieStrode ShadowyHall false false As Laurie Strode hands you the weathered key, a brief but grateful nod passes between you. Her determined gaze lingers for a moment, before she fades into the shadows.
+character - NancyThompson TerrifyingAuditorium false true As Nancy Thompson places the ethereal Guardian Totem in your hands, a determined gleam in her eyes conveys a solemn plea, and melds into the shadows.
+
+// charName itemType itemName itemWeight itemDescription
+giveTo LaurieStrode - key 1 false A sinister key unlocking the Exam Room where the shadows hold the answers to the unsettling truths veiled in this nightmarish ordeal.KEEP IT.
+giveTo NancyThompson - guardiantotem 0 false This weightless and ancient relic, subtly changes fate, providing a small but significant thread of protection to bolster your chances of enduring the nightmarish trials that lie ahead.
